@@ -72,7 +72,7 @@
   有关于server酱的自定义只有显示名称 name，可以在程序中的USERs设置，对应nickname
 
   如果不配置Server酱微信推送，那么Value里对应的serverkey填写0即可，
-  若为一个人的serverkey，填写为['0']
+  若为一个人的serverkey，value填写为['0']
   
   如果想配置的话看下一点
 
