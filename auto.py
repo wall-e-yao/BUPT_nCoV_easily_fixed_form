@@ -107,7 +107,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 
 AREA     = eval(os.environ['AREA'])       # 使用 ` ` 连接省、市、县
 SERVER_KEY = eval(os.environ['SERVER_KEY'])
-USERs = eval(os.environ['USERs'])
+USERs = eval(os.environ['USERS'])
 
 ###############################################################################
 # 进行CAS认证, 获取cookie
@@ -161,8 +161,8 @@ for i in range(len(USERs)):
 		# 设置表单数据
 		data = DATA
 		data['created'] = str(round(time.time()))
-		data["area"] = AREA[i]
-		postion = AREA[i].split()
+		data["area"] = AREA[0]
+		postion = AREA[0].split()
 		if postion[0] in ['北京市','上海市','重庆市','天津市']:
 			city = postion[0]
 		else:
@@ -171,7 +171,7 @@ for i in range(len(USERs)):
 		data["province"] = postion[0]
 		data["sfzx"] = SFZX
 
-		logging.info('Form: area: %s, is in university: %s', str(AREA[i]) ,bool(SFZX[i]))
+		logging.info('Form: area: %s, is in university: %s', str(AREA[0]) ,bool(SFZX[i]))
 		logging.debug(data)
 
 		# 填报
@@ -187,7 +187,7 @@ for i in range(len(USERs)):
 		
 	# wechat自动播报机器人-使用server酱
 	# 借鉴https://github.com/zzp-seeker/bupt-ncov-auto-report
-	data_p = AREA[i]
+	data_p = AREA[0]
 	Flag_successs+=[Flag_success]
 	responces+=[responce.json()['m']]
 	data_ps+=[data_p]
@@ -195,7 +195,7 @@ for i in range(len(USERs)):
 	NAMEs+=[NAME]	
 	try:
 		notifier = ServerJiangNotifier(
-			sckey=SERVER_KEY[i], # server酱的发送key
+			sckey=SERVER_KEY[0], # server酱的发送key
 			sess=requests.Session()
 		)
 		print(f'通过「{notifier.PLATFORM_NAME}」给用户发送通知')
