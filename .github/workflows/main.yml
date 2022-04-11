@@ -29,6 +29,6 @@ jobs:
     - name: 'signin'
       env:
         AREA: ${{ secrets.AREA }}
-        USERs: ${{ secrets.USERs }}
+        USERs: ${{ secrets.USERS }}
         SERVER_KEY: ${{ secrets.SERVER_KEY }}
       run: python auto.py
