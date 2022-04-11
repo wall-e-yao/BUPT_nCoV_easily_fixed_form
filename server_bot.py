@@ -23,7 +23,7 @@ class INotifier(metaclass=ABCMeta):
         """
 
 import os        
-USERs = eval(os.environ['USERS'])
+USERs = eval(os.environ['USERs'])
 TIMEOUT_SECOND = 25
 
 class ServerJiangNotifier(INotifier):
