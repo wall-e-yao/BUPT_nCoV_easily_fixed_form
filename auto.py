@@ -107,7 +107,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 
 AREA     = eval(os.environ['AREA'])       # 使用 ` ` 连接省、市、县
 SERVER_KEY = eval(os.environ['SERVER_KEY'])
-USERs = eval(os.environ['USERS'])
+USERs = eval(os.environ['USERs'])
 
 ###############################################################################
 # 进行CAS认证, 获取cookie
