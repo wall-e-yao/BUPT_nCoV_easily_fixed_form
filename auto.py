@@ -171,7 +171,7 @@ for i in range(len(USERs)):
 		data["province"] = postion[0]
 		data["sfzx"] = SFZX
 
-		logging.info('Form: area: %s, is in university: %s', str(AREA[0]) ,bool(SFZX[i]))
+# 		logging.info('Form: area: %s, is in university: %s', str(AREA[0]) ,bool(SFZX[i]))
 		logging.debug(data)
 
 		# 填报
